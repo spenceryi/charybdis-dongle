@@ -118,6 +118,7 @@
             bindings = <&kp END>, <&kp END>;
             mods = <(MOD_LCTL)>; 
         };
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
