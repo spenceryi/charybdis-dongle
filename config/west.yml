@@ -15,7 +15,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-keyboards-charybdis
-      url: https://github.com/victorlucachi/zmk-keyboards-charybdis
+      url: https://github.com/spenceryi/charybdis-zmk-module
       revision: main
       path: modules/zmk-keyboards-charybdis
   self:
