@@ -56,7 +56,7 @@
 
 / {
     chosen {
-        zmk,matrix_trandsform = &five_column_transform;
+        zmk,matrix_transform = &five_column_transform;
     };
 
     trackball_listener {
