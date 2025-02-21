@@ -3,6 +3,55 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#define U_TAPPING_TERM 200
+
+/* Layers */
+#define DEF 0
+#define QWERTY 1
+#define SYM 2
+#define NAV 3
+#define NUM 4
+#define FN 5
+#define SYS 6
+#define SNIPE 7
+#define SCROLL 8
+
+#define XXX &none
+#define ___ &trans
+
+#define QUICK_TAP_MS 175
+#define TAB_LEFT &kp LC(LS(TAB))
+#define TAB_RIGHT &kp LC(TAB)
+#define SWITCH_LANG &kp LC(SPACE)
+#define UNDO &kp LC(Z)
+
+#define MT_CORE \
+    flavor = "tap-preferred"; \
+    tapping-term-ms = <220>; \
+    quick-tap-ms = <220>; \
+    hold-trigger-key-positions = <0>;
+
+&sk {
+    release-after-ms = <800>;
+    quick-release;            
+};
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+&mt { MT_CORE };
+#define NAV_UP &mt LC(HOME) UP
+#define NAV_DOWN  &mt LC(END)  DOWN
+#define NAV_LEFT  &mt_home 0   LEFT 
+#define NAV_RIGHT &mt_end  0   RIGHT
+
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
+};
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
